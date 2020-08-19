@@ -1,0 +1,9 @@
+
+span[id$="TypeTxt"] {
+    font-weight: bold;
+}
+
+.resultTypeSelected {
+  color: #0000FF;
+}
+

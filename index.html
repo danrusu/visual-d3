@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <head>
-  <link rel="shortcut icon" href="">
-  <meta charset="utf-8">
+    <link rel="shortcut icon" href="">
+    <meta charset="utf-8">
 
-  <!-- Load d3.js -->
-  <script src="https://d3js.org/d3.v4.js"></script>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
 
+    <!-- Color Scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    
+    <link rel="stylesheet" href="main.css"> 
 </head>
 </body>
-  <!-- Create a div where the graph will take place -->
-  <div id="my_dataviz"></div>
 
-  <!-- Color Scale -->
-  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <h3>Performance duration statistics</h3>
+  <br/>
+  
+  <input type="radio" id="import" name="resultType" onclick="displayGraphFromData('import')" onchange="resultTypeOnChange()"> 
+  <span id="importTypeTxt">Import</span> 
+  <input type="radio" id="accumulation" name="resultType" onclick="displayGraphFromData('accumulation')" onchange="resultTypeOnChange()">
+  <span  id="accumulationTypeTxt">Accumulation</span> 
+  <hr/>
+  
+  <div id="graphAll"></div>
 
-  <script>
+  <script>      			
 
-    // set the dimensions and margins of the graph
-    const margin = {
+    const displayGraph = data => {
+      
+      d3.selectAll("svg").remove();
+
+      // set the dimensions and margins of the graph
+      const margin = {
         top: 30, 
         right: 100, 
         bottom: 30, 
         left: 100
       },
-        width = 800 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+      width = 800 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
 
-    // append the svg object to the body of the page
-    const svg = d3.select("#my_dataviz")
-      .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-        .attr("transform",
-              "translate(" + margin.left + "," + margin.top + ")");				
+      // append the svg object to the body of the page
+        const svg = d3.select("#graphAll")
+        .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+          .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");	
 
-    const displayGraph = data => {
-
-        var groupNames = data.map(d => d.name);
+        const groupNames = data.map(d => d.name);
 
         // A color scale: one color for each group
-        var myColor = d3.scaleOrdinal()
+        const myColor = d3.scaleOrdinal()
           .domain(groupNames)
           .range(d3.schemeSet2);
 
         // Add X axis --> it is a date format
-        var x = d3.scaleLinear()
+        const x = d3.scaleLinear()
           .domain([ 0, 5000 ])
           .range([ 0, width ]);
         
@@ -61,7 +73,7 @@
         svg.append("g").call(d3.axisLeft(y));
 
         // Add the lines
-        var line = d3.line()
+        const line = d3.line()
           .x(d => x(+d.noOfLocations))
           .y(d => y(+d.duration))
         
@@ -73,7 +85,7 @@
             .attr("d", d => line(d.values))
             .attr("stroke", d => myColor(d.name))
             .style("stroke-width", 4)
-            .style("fill", "none")
+            .style("fill", "none");
 
         // Add the points
         svg
@@ -92,7 +104,7 @@
             .attr("cx", d => x(d.noOfLocations))
             .attr("cy", d => y(d.duration))
             .attr("r", 5)
-            .attr("stroke", "white")
+            .attr("stroke", "white");
 
         // Add a label at the end of each line
         svg
@@ -111,7 +123,7 @@
               .attr("x", 12) // shift the text a bit more right
               .text(d => d.name)
               .style("fill", d => myColor(d.name))
-              .style("font-size", 15)
+              .style("font-size", 15);
 
         // Add a legend (interactive)
         svg
@@ -130,17 +142,25 @@
               currentOpacity = d3.selectAll("." + d.name).style("opacity")
               // Change the opacity: from 0 to 1 or from 1 to 0
               d3.selectAll("." + d.name).transition().style("opacity", currentOpacity == 1 ? 0:1)
-
-            })
+            });
     };
 
-    (async () => {
-      const response = await fetch('data');
+    const displayGraphFromData = async dataEndpointName => {   
+      const response = await fetch(dataEndpointName);
       const data = await response.json();
       console.log(data);
       
-      displayGraph(data);	
-    })();
+      displayGraph(data);
+    };
+
+    const resultTypeOnChange = () => {
+      const resultTypeButtons = [].slice.call(document.querySelectorAll('[name="resultType"]'))
+        .forEach(resultTypeButton =>
+            document.getElementById(`${resultTypeButton.id}TypeTxt`).className = resultTypeButton.checked ?
+              'resultTypeSelected'
+              : ''          
+        );
+    }
 
   </script>
 </body>

@@ -13,13 +13,17 @@ const serveFileFromRoot = (res, relativePath) =>
     res.sendFile(path.join(`${__dirname}/${relativePath}`));
 
 const serveHome = (_, res) => serveFileFromRoot(res, 'index.html');
-const serveData = (_, res) => serveFileFromRoot(res, 'data.json');
+const serveImportData = (_, res) => serveFileFromRoot(res, 'import.json');
+const serveAccumulationData = (_, res) => serveFileFromRoot(res, 'accumulation.json');
 const serveFavicon = (_, res) => serveFileFromRoot(res, 'favicon.ico');
+const serveMainCss = (_, res) => serveFileFromRoot(res, 'main.css');
 
 // routes
 app.get('/', serveHome);
-app.get('/data', serveData);
+app.get('/import', serveImportData);
+app.get('/accumulation', serveAccumulationData);
 app.get('/favicon.ico', serveFavicon);
+app.get('/main.css', serveMainCss);
 
 const port = process.env.PORT || 1111;
 
