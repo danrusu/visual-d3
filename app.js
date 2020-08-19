@@ -17,6 +17,7 @@ const serveImportData = (_, res) => serveFileFromRoot(res, 'import.json');
 const serveAccumulationData = (_, res) => serveFileFromRoot(res, 'accumulation.json');
 const serveFavicon = (_, res) => serveFileFromRoot(res, 'favicon.ico');
 const serveMainCss = (_, res) => serveFileFromRoot(res, 'main.css');
+const serveMainJs = (_, res) => serveFileFromRoot(res, 'main.js');
 
 // routes
 app.get('/', serveHome);
@@ -24,6 +25,7 @@ app.get('/import', serveImportData);
 app.get('/accumulation', serveAccumulationData);
 app.get('/favicon.ico', serveFavicon);
 app.get('/main.css', serveMainCss);
+app.get('/main.js', serveMainJs);
 
 const port = process.env.PORT || 1111;
 
