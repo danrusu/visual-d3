@@ -1,0 +1,68 @@
+[
+  {
+    "name": "_2020_18_11",
+    "values": [
+      {
+        "noOfLocations": "1",
+        "duration": 281398
+      },
+      {
+        "noOfLocations": "100",
+        "duration": 460418
+      },
+      {
+        "noOfLocations": "250",
+        "duration": 653194
+      },
+      {
+        "noOfLocations": "500",
+        "duration": 691563
+      },
+      {
+        "noOfLocations": "1000",
+        "duration": 774150
+      },
+      {
+        "noOfLocations": "4000",
+        "duration": 2502324
+      },
+      {
+        "noOfLocations": "5000",
+        "duration": 1990413
+      }
+    ]
+  },
+  {
+    "name": "_2020_18_15",
+    "values": [
+      {
+        "noOfLocations": "1",
+        "duration": 255404
+      },
+      {
+        "noOfLocations": "100",
+        "duration": 390403
+      },
+      {
+        "noOfLocations": "250",
+        "duration": 604463
+      },
+      {
+        "noOfLocations": "500",
+        "duration": 623594
+      },
+      {
+        "noOfLocations": "1000",
+        "duration": 737529
+      },
+      {
+        "noOfLocations": "4000",
+        "duration": 2336517
+      },
+      {
+        "noOfLocations": "5000",
+        "duration": 1838914
+      }
+    ]
+  }
+]

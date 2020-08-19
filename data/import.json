@@ -3,31 +3,31 @@
       "name": "_2020_18_11",
       "values": [
         {
-          "noOfLocations": "1",
+          "noOfLocations": 1,
           "duration": 377348
         },
         {
-          "noOfLocations": "100",
+          "noOfLocations": 100,
           "duration": 390534
         },
         {
-          "noOfLocations": "250",
+          "noOfLocations": 250,
           "duration": 1090759
         },
         {
-          "noOfLocations": "500",
+          "noOfLocations": 500,
           "duration": 1551849
         },
         {
-          "noOfLocations": "1000",
+          "noOfLocations": 1000,
           "duration": 1894381
         },
         {
-          "noOfLocations": "4000",
+          "noOfLocations": 4000,
           "duration": 5995659
         },
         {
-          "noOfLocations": "5000",
+          "noOfLocations": 5000,
           "duration": 5067330
         }
       ]
@@ -36,33 +36,33 @@
       "name": "_2020_18_15",
       "values": [
         {
-          "noOfLocations": "1",
+          "noOfLocations": 1,
           "duration": 341630
         },
         {
-          "noOfLocations": "100",
+          "noOfLocations": 100,
           "duration": 390403
         },
         {
-          "noOfLocations": "250",
+          "noOfLocations": 250,
           "duration": 1115280
         },
         {
-          "noOfLocations": "500",
+          "noOfLocations": 500,
           "duration": 1475709
         },
         {
-          "noOfLocations": "1000",
+          "noOfLocations": 1000,
           "duration": 1883683
         },
         {
-          "noOfLocations": "4000",
+          "noOfLocations": 4000,
           "duration": 5903140
         },
         {
-          "noOfLocations": "5000",
+          "noOfLocations": 5000,
           "duration": 4468138
         }
       ]
-    }
+    } 
   ]
