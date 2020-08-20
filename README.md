@@ -1,14 +1,7 @@
-# Node & Express REST API for Database queries
-
-### Goal: Use it in API testing from Postman.
+# Node & Express & D3.js Visualization Solution
 
 ### Run server:
 ```
 npm install
 npm start
 ```
-
-### [Postman demo](postman)
-
-### Heroku
-https://rest-sql.herokuapp.com/
