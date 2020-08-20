@@ -15,19 +15,19 @@ const addYAxisLegend = (svg, legendText) => svg.append("text")
   .text(legendText)
   .style('fill', 'blue');
 
-const displayGraph = data => {
+const displayGraph = (data, {
+  margin,
+  width,
+  height,
+  legend,
+  xRange,
+  yRange,
+}) => {
       
     d3.selectAll("svg").remove();
-
-    // set the dimensions and margins of the graph
-    const margin = {
-      top: 50, 
-      right: 100, 
-      bottom: 50, 
-      left: 100
-    },
-    width = 1200 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    
+    width = width - margin.left - margin.right,
+    height = height - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
       const svg = d3.select("#graphAll")
@@ -47,7 +47,7 @@ const displayGraph = data => {
 
       // Add X axis --> it is a date format
       const x = d3.scaleLinear()
-        .domain([ 0, 5000 ])
+        .domain([ xRange.start, xRange.stop ])
         .range([ 0, width ]);
       
       svg.append("g")
@@ -56,7 +56,7 @@ const displayGraph = data => {
 
       // Add Y axis
       var y = d3.scaleLinear()
-        .domain([ 0, 6000000 ])
+        .domain([ yRange.start, yRange.stop ])
         .range([ height, 0 ]);
       
       svg.append("g").call(d3.axisLeft(y));
@@ -133,8 +133,8 @@ const displayGraph = data => {
             d3.selectAll("." + d.name).transition().style("opacity", currentOpacity == 1 ? 0:1)
           });
 
-      addXAxisLegend(svg, 'Portfolio size [no. of locations * 1000]', width, height);      
-      addYAxisLegend(svg, 'Duration [ms]');
+      addXAxisLegend(svg, legend.x, width, height);      
+      addYAxisLegend(svg, legend.y);
       
 };
 
@@ -142,8 +142,32 @@ const displayGraphFromData = async dataName => {
   const response = await fetch(`/data/${dataName}.json`);
   const data = await response.json();
   console.log(data);
-    
-  displayGraph(data);
+
+  // set the dimensions and margins of the graph
+  const margin = {
+    top: 50, 
+    right: 100, 
+    bottom: 50, 
+    left: 100
+  };
+  const width = 1000;
+  const height = 500;
+  const legend = {
+    x: 'Portfolio size [no. of locations * 1000]',
+    y: 'Duration [ms]'
+  };
+  const xRange = { start: 0, stop: 5000 };
+  const yRange = {start: 0, stop: 6000000 };
+
+
+  displayGraph(data, { 
+    margin, 
+    width, 
+    height,
+    legend,
+    xRange,
+    yRange,
+  });
 };
 
 const resultTypeOnChange = () => {
