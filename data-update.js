@@ -67,6 +67,8 @@ const saveWorkflowData = async (workflowData, dataType) => {
     await write(dataFilePath, prettify(currentData));
 };
 
+'use strict';
+
 const updateData = async (req, res) => {
     const dataType = req.params.dataType;
     

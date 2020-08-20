@@ -21,6 +21,6 @@ app.put('/data/:dataType', updateData);
 
 const port = process.env.PORT || 1111;
 const notifyServerStart = () =>
-    console.log(`Express server listening at http://localhost:${port}`);
+    console.log(`Express server listening at http://localhost:${port}/`);
 
 app.listen(port, notifyServerStart);
