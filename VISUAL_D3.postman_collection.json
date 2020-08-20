@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "e398f473-1dd9-46f5-a35c-544ddd362438",
+		"name": "VISUAL_D3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get import data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1111/data/import.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"data",
+						"import.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get accumulation data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1111/data/accumulation.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"data",
+						"accumulation.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add import",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"1112\",\r\n  \"name\": \"import-2020-08-20-12-57-13\",\r\n  \"date\": \"2020-08-20\",\r\n  \"noOfLocations\": \"1M\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 500000\r\n  },\r\n  \"type\": \"IMPORT\",\r\n  \"status\": \"FINISHED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1111/data/accumulation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"data",
+						"accumulation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add accumulation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"1111\",\r\n  \"name\": \"qa-eiq-a-e2e-country-2020-08-20-12-57-13\",\r\n  \"date\": \"2020-08-20\",\r\n  \"noOfLocations\": \"500K\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 500000\r\n  },\r\n  \"type\": \"ACCUMULATION\",\r\n  \"status\": \"FINISHED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1111/data/accumulation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"data",
+						"accumulation"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
