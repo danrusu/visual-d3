@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 const path = require('path');
-const { updateData } = require('./data-update.js');
+const { getDataTypes, updateData } = require('./data.js');
 
 app.use(express.json());
 app.use(express.static('public'));
@@ -17,6 +17,7 @@ const serveHome = (_, res) => serveFileFromRoot(res, 'index.html');
 
 // routes
 app.get('/', serveHome);
+app.get('/data', getDataTypes);
 app.put('/data/:dataType', updateData);
 
 const port = process.env.PORT || 1111;

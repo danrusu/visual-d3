@@ -177,4 +177,30 @@ const resultTypeOnChange = () => {
           'resultTypeSelected'
           : ''          
     );
-}
+};
+
+const setResultTypes = async () => {
+  const resultTypes = await (await fetch('/data')).json(); 
+
+  const getResultTypeHtml = resultType => `
+  <input type="radio" id="${resultType}" name="resultType">
+  <span id="${resultType}TypeTxt">${resultType}</span> 
+  `;
+
+  const resultTypeHtml = resultTypes.map(getResultTypeHtml).join('\n');
+
+  document.getElementById('resultTypes').innerHTML = resultTypeHtml;      
+
+  const setResultTypeOnChange = element => element.addEventListener('change', resultTypeOnChange);
+  const setResultTypeOnClick = element => element.addEventListener(
+    'click', 
+    () => displayGraphFromData(element.id)
+  );
+
+  const resultTypeButtons = document.querySelectorAll('#resultTypes input');
+
+  resultTypeButtons.forEach(setResultTypeOnChange);
+  resultTypeButtons.forEach(setResultTypeOnClick);
+
+  document.getElementById(resultTypes[0]).click();
+};

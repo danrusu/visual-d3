@@ -17,32 +17,14 @@
   <h3>Performance duration statistics</h3>
   <br/>
   
-  <input type="radio" id="import" name="resultType"> 
-  <span id="importTypeTxt">Import</span> 
-
-  <input type="radio" id="accumulation" name="resultType">
-  <span id="accumulationTypeTxt">Accumulation</span> 
-  
-  <input type="radio" id="hazard" name="resultType">
-  <span id="hazardTypeTxt">Hazard</span> 
+  <div id="resultTypes"></div>
   
   <hr/>
   
   <div id="graphAll"></div>
 
-  <script>      			
-    const setResultTypeOnChange = element => element.addEventListener('change', resultTypeOnChange);
-    const setResultTypeOnClick = element => element.addEventListener(
-      'click', 
-      () => displayGraphFromData(element.id)
-    );
-
-    const resultTypes = document.querySelectorAll('[name="resultType"]');
-    
-    resultTypes.forEach(setResultTypeOnChange);
-    resultTypes.forEach(setResultTypeOnClick);
-        
-    document.getElementById('import').click();    
+  <script>          
+      setResultTypes();        
   </script>
 </body>
 </html>

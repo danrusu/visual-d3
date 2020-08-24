@@ -1,9 +1,9 @@
 'use strict';
 
 const path = require('path');
-const { readFile, writeFile } = require('fs');
+const { readFile, writeFile, readdir } = require('fs');
 const { promisify } = require('util');
-const [ read, write ] = [ readFile, writeFile ].map(promisify);
+const [ read, write, readDir ] = [ readFile, writeFile, readdir ].map(promisify);
 
 const DATA_TYPES = [ 'import', 'accumulation', 'hazard' ];
 const prettify = json => JSON.stringify(json, null, 2);
@@ -95,4 +95,10 @@ const updateData = async (req, res) => {
     res.status(202).send(`${dataType} upload success`);
 };
 
-module.exports = { updateData };
+const getDataTypes = async (req, res) => {
+    const fileNames = await readDir('data');
+    const dataTypes = fileNames.map(fileName => fileName.replace(/\.json/, ''));
+    res.status(200).send(dataTypes);
+};
+
+module.exports = { updateData, getDataTypes };
