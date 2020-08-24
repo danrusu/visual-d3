@@ -112,7 +112,7 @@ const displayGraph = (data, {
             .attr("x", 12) // shift the text a bit more right
             .text(d => d.name)
             .style("fill", d => myColor(d.name))
-            .style("font-size", 15);
+            .style("font-size", 10);
 
       // Add a legend (interactive)
       svg

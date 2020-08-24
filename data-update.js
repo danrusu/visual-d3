@@ -1,9 +1,11 @@
+'use strict';
+
 const path = require('path');
 const { readFile, writeFile } = require('fs');
 const { promisify } = require('util');
 const [ read, write ] = [ readFile, writeFile ].map(promisify);
 
-const DATA_TYPES = ['import', 'accumulation'];
+const DATA_TYPES = [ 'import', 'accumulation', 'hazard' ];
 const prettify = json => JSON.stringify(json, null, 2);
 
 const NO_OF_LOCATIONS = {
@@ -67,7 +69,6 @@ const saveWorkflowData = async (workflowData, dataType) => {
     await write(dataFilePath, prettify(currentData));
 };
 
-'use strict';
 
 const updateData = async (req, res) => {
     const dataType = req.params.dataType;

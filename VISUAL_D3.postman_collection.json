@@ -52,7 +52,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id\": \"1112\",\r\n  \"name\": \"import-2020-08-20-12-57-13\",\r\n  \"date\": \"2020-08-20\",\r\n  \"noOfLocations\": \"1M\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 500000\r\n  },\r\n  \"type\": \"IMPORT\",\r\n  \"status\": \"FINISHED\"\r\n}",
+					"raw": "{\r\n  \"id\": \"1112\",\r\n  \"name\": \"import-2020-08-20-12-57-13\",\r\n  \"date\": \"2020-08-20\",\r\n  \"noOfLocations\": \"250K\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 300000\r\n  },\r\n  \"type\": \"IMPORT\",\r\n  \"status\": \"FINISHED\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -60,7 +60,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:1111/data/accumulation",
+					"raw": "http://localhost:1111/data/import",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -68,7 +68,7 @@
 					"port": "1111",
 					"path": [
 						"data",
-						"accumulation"
+						"import"
 					]
 				}
 			},
