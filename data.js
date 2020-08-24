@@ -1,11 +1,12 @@
 'use strict';
 
 const path = require('path');
+const fetch = require('node-fetch');
 const { readFile, writeFile, readdir } = require('fs');
 const { promisify } = require('util');
 const [ read, write, readDir ] = [ readFile, writeFile, readdir ].map(promisify);
 
-const DATA_TYPES = [ 'import', 'accumulation', 'hazard' ];
+
 const prettify = json => JSON.stringify(json, null, 2);
 
 const NO_OF_LOCATIONS = {
@@ -71,6 +72,7 @@ const saveWorkflowData = async (workflowData, dataType) => {
 
 
 const updateData = async (req, res) => {
+    const DATA_TYPES = await (await fetch('http://localhost:1111/data')).json();
     const dataType = req.params.dataType;
     
     if (! DATA_TYPES.includes(dataType)){
@@ -78,7 +80,7 @@ const updateData = async (req, res) => {
         return;
     }
 
-    if (req.headers['content-type'] !== 'application/json'){ 
+    if (req.headers['content-type'] !== 'application/json'){    
         res.status(406).send('Only JSON is supported!');
         return;
     }

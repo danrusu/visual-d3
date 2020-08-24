@@ -6,6 +6,25 @@
 	},
 	"item": [
 		{
+			"name": "get data types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1111/data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "get import data",
 			"request": {
 				"method": "GET",
@@ -26,12 +45,12 @@
 			"response": []
 		},
 		{
-			"name": "get accumulation data",
+			"name": "get accumulation geopolitical-country data",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:1111/data/accumulation.json",
+					"raw": "http://localhost:1111/data/geopolitical-country.json",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -39,7 +58,27 @@
 					"port": "1111",
 					"path": [
 						"data",
-						"accumulation.json"
+						"geopolitical-country.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get accumulation hazard data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1111/data/hazard.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"data",
+						"hazard.json"
 					]
 				}
 			},
@@ -75,7 +114,7 @@
 			"response": []
 		},
 		{
-			"name": "add accumulation",
+			"name": "add geopolitical-country accumulation",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -89,7 +128,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:1111/data/accumulation",
+					"raw": "http://localhost:1111/data/geopolitical-country",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -97,7 +136,36 @@
 					"port": "1111",
 					"path": [
 						"data",
-						"accumulation"
+						"geopolitical-country"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add hazard accumulation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"1111\",\r\n  \"name\": \"qa-eiq-a-e2e-country-2020-08-20-12-57-13\",\r\n  \"date\": \"2020-08-20\",\r\n  \"noOfLocations\": \"500K\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 500000\r\n  },\r\n  \"type\": \"ACCUMULATION\",\r\n  \"status\": \"FINISHED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1111/data/hazard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"data",
+						"hazard"
 					]
 				}
 			},
