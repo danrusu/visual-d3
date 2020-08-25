@@ -6,7 +6,6 @@ const { readFile, writeFile, readdir } = require('fs');
 const { promisify } = require('util');
 const [ read, write, readDir ] = [ readFile, writeFile, readdir ].map(promisify);
 
-
 const prettify = json => JSON.stringify(json, null, 2);
 
 const NO_OF_LOCATIONS = {
@@ -70,7 +69,6 @@ const saveWorkflowData = async (workflowData, dataType) => {
     await write(dataFilePath, prettify(currentData));
 };
 
-
 const updateData = async (req, res) => {
     const DATA_TYPES = await (await fetch('http://localhost:1111/data')).json();
     const dataType = req.params.dataType;
@@ -97,9 +95,11 @@ const updateData = async (req, res) => {
     res.status(202).send(`${dataType} upload success`);
 };
 
-const getDataTypes = async (req, res) => {
+const getDataTypes = async (_, res) => {
     const fileNames = await readDir('data');
-    const dataTypes = fileNames.map(fileName => fileName.replace(/\.json/, ''));
+    const dataTypes = fileNames
+        .map(fileName => fileName.replace(/\.json/, ''))
+        .sort().reverse();
     res.status(200).send(dataTypes);
 };
 

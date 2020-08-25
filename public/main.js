@@ -15,7 +15,7 @@ const addYAxisLegend = (svg, legendText) => svg.append("text")
   .text(legendText)
   .style('fill', 'blue');
 
-const displayGraph = (data, {
+const displayGraph = (containerSelector, data, {
   margin,
   width,
   height,
@@ -30,7 +30,7 @@ const displayGraph = (data, {
     height = height - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
-      const svg = d3.select("#graphAll")
+      const svg = d3.select(containerSelector)
       .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -138,11 +138,13 @@ const displayGraph = (data, {
       
 };
 
-const displayGraphFromData = async dataName => {   
-  const response = await fetch(`/data/${dataName}.json`);
-  const data = await response.json();
-  console.log(data);
+const getJson = async url => await (await fetch(url)).json();
 
+const getData = async dataType => getJson(`/data/${dataType}.json`);
+const getDataTypes = async () => getJson(`/data`);
+
+const displayDataGraph = async graphData => {   
+ 
   // set the dimensions and margins of the graph
   const margin = {
     top: 50, 
@@ -157,10 +159,10 @@ const displayGraphFromData = async dataName => {
     y: 'Duration [ms]'
   };
   const xRange = { start: 0, stop: 5000 };
-  const yRange = {start: 0, stop: 6000000 };
+  const yRange = { start: 0, stop: 6000000 };
 
 
-  displayGraph(data, { 
+  displayGraph('#dataGraph', graphData, { 
     margin, 
     width, 
     height,
@@ -170,37 +172,90 @@ const displayGraphFromData = async dataName => {
   });
 };
 
-const resultTypeOnChange = () => {
-  const resultTypeButtons = [].slice.call(document.querySelectorAll('[name="resultType"]'))
-    .forEach(resultTypeButton =>
-        document.getElementById(`${resultTypeButton.id}TypeTxt`).className = resultTypeButton.checked ?
-          'resultTypeSelected'
+const dataTypeOnChange = () => [].slice.call(document.querySelectorAll('[name="dataType"]'))
+    .forEach(dataTypeButton =>
+        document.getElementById(`${dataTypeButton.id}TypeTxt`).className = dataTypeButton.checked ?
+          'dataTypeSelected'
           : ''          
     );
-};
 
-const setResultTypes = async () => {
-  const resultTypes = await (await fetch('/data')).json(); 
+const setDataTypeMenu = async () => {
+  const dataTypes = await getDataTypes(); 
 
-  const getResultTypeHtml = resultType => `
-  <input type="radio" id="${resultType}" name="resultType">
-  <span id="${resultType}TypeTxt">${resultType}</span> 
+  const getDataTypeMenuHtml = dataType => `
+    <input type="radio" id="${dataType}" name="dataType">
+    <span id="${dataType}TypeTxt">${dataType}</span> 
   `;
 
-  const resultTypeHtml = resultTypes.map(getResultTypeHtml).join('\n');
+  const dataTypeHtml = dataTypes.map(getDataTypeMenuHtml).join('\n');
 
-  document.getElementById('resultTypes').innerHTML = resultTypeHtml;      
+  document.getElementById('dataTypeMenu').innerHTML = dataTypeHtml;      
 
-  const setResultTypeOnChange = element => element.addEventListener('change', resultTypeOnChange);
-  const setResultTypeOnClick = element => element.addEventListener(
+  const setDataTypeOnChange = element => element.addEventListener('change', dataTypeOnChange);
+  const setDataTypeOnClick = element => element.addEventListener(
     'click', 
-    () => displayGraphFromData(element.id)
+    () => setPage(element.id)
   );
 
-  const resultTypeButtons = document.querySelectorAll('#resultTypes input');
+  const dataTypeButtons = document.querySelectorAll('#dataTypeMenu input');
 
-  resultTypeButtons.forEach(setResultTypeOnChange);
-  resultTypeButtons.forEach(setResultTypeOnClick);
+  dataTypeButtons.forEach(setDataTypeOnChange);
+  dataTypeButtons.forEach(setDataTypeOnClick);
 
-  document.getElementById(resultTypes[0]).click();
+  document.getElementById(dataTypes[0]).click();
 };
+
+const displayDataTable = data => {  
+  const dataHeader = getDataHeader(data[0]);
+  const dataRows = data.map(dataGroupToHtmlRow).join('\n');
+  document.getElementById('dataTable').innerHTML = dataHeader + dataRows;
+};
+
+const getDataHeader = headerData =>  {
+  const header = headerData.values
+    .map(value => `<span class="value">${value.noOfLocations}K</span>`)
+    .join('');
+  return `<div class="header"><span>Size</span>${header}</div>`
+    + `<div class="header"><span>Date</span class="values"><span class="sevenColumns">Duration [h:m:s.ms]<span></div>`
+}
+
+
+const dataGroupToHtmlRow = dataGroup => {
+  const valuesHtml = dataGroup.values
+    .map(value => `<span class="value">${msToTimeStr(value.duration)}</span>`)
+    .join('');
+    
+  return `<div><span class="date">${dataGroup.name.slice(1)}</span>${valuesHtml}</div>`
+}
+
+const msToTimeObj = durationInMiliseconds => {   
+  const milliseconds = durationInMiliseconds % 1000;
+  let duration = (durationInMiliseconds - milliseconds) / 1000;
+
+  const seconds = duration % 60;
+  duration = (duration - seconds) / 60;
+
+  const minutes = duration % 60;    
+
+  const hours = (duration - minutes) / 60;
+ 
+  return {
+      hours,
+      minutes,
+      seconds,
+      milliseconds
+  };
+};
+
+const msToTimeStr = durationInMiliseconds => {
+  const { hours, minutes, seconds, milliseconds } = msToTimeObj(durationInMiliseconds);  
+  return `${hours}:${minutes}:${seconds}.${milliseconds}`;  
+}
+
+const setPage = async dataType => {  
+  const data = await getData(dataType);  
+  const applyAction = data => action => action(data);
+
+  const dataActions = [ displayDataGraph, displayDataTable ];
+  dataActions.forEach(applyAction(data));
+}

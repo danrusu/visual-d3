@@ -6,7 +6,37 @@ span[id$="TypeTxt"] {
     font-weight: bold;
 }
 
-.resultTypeSelected {
-  color: #0000FF;
+.dataTypeSelected {
+  color: blue;
 }
 
+#dataTable {
+  margin-top: 20px;
+  font-size: small;
+  color: darkblue;
+}
+
+#dataTable div{  
+  margin: 10px 40px;
+}
+
+#dataTable span{
+  display: inline-block;
+  margin: 0px 5px;
+  padding: 5px;
+  width: 100px;
+}
+
+#dataTable .header span{
+  font-weight: bold;
+  background-color: darkblue;
+  color: white;
+}
+
+#dataTable .sevenColumns{
+  width: 820px;
+}
+
+#dataTable .date{
+  font-weight: bold;
+}

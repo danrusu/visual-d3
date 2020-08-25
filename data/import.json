@@ -64,5 +64,38 @@
         "duration": 4468138
       }
     ]
+  },
+  {
+    "name": "_2020_08_24",
+    "values": [
+      {
+        "noOfLocations": 1,
+        "duration": 368934
+      },
+      {
+        "noOfLocations": 100,
+        "duration": 407232
+      },
+      {
+        "noOfLocations": 250,
+        "duration": 1104105
+      },
+      {
+        "noOfLocations": 500,
+        "duration": 1336019
+      },
+      {
+        "noOfLocations": 1000,
+        "duration": 1734612
+      },
+      {
+        "noOfLocations": 4000,
+        "duration": 5695641
+      },
+      {
+        "noOfLocations": 5000,
+        "duration": 4306499
+      }
+    ]
   }
 ]
