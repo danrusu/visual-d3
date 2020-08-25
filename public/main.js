@@ -206,7 +206,7 @@ const setDataTypeMenu = async () => {
 };
 
 const displayDataTable = data => {  
-  const dataHeader = getDataHeader(data[0]);
+  const dataHeader = data[0] ? getDataHeader(data[0]) : [];
   const dataRows = data.map(dataGroupToHtmlRow).join('\n');
   document.getElementById('dataTable').innerHTML = dataHeader + dataRows;
 };
