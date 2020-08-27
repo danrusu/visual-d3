@@ -6,6 +6,35 @@
 	},
 	"item": [
 		{
+			"name": "create test data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"name\": \"_series #1\",\r\n    \"values\": [\r\n      {\r\n        \"noOfLocations\": 1,\r\n        \"duration\": 1000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 100,\r\n        \"duration\": 2000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 250,\r\n        \"duration\": 3000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 500,\r\n        \"duration\": 5000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 1000,\r\n        \"duration\": 3000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 4000,\r\n        \"duration\": 5000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 5000,\r\n        \"duration\": 3000000\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"name\": \"_series #2\",\r\n    \"values\": [\r\n      {\r\n        \"noOfLocations\": 1,\r\n        \"duration\": 1500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 100,\r\n        \"duration\": 2500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 250,\r\n        \"duration\": 3500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 500,\r\n        \"duration\": 5500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 1000,\r\n        \"duration\": 3500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 4000,\r\n        \"duration\": 5500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 5000,\r\n        \"duration\": 3500000\r\n      }\r\n    ]\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1111/data/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1111",
+					"path": [
+						"data",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "get data types",
 			"request": {
 				"method": "GET",
@@ -25,12 +54,12 @@
 			"response": []
 		},
 		{
-			"name": "get import data",
+			"name": "get test data",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:1111/data/import.json",
+					"raw": "http://localhost:1111/data/test.json",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -38,60 +67,20 @@
 					"port": "1111",
 					"path": [
 						"data",
-						"import.json"
+						"test.json"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "get accumulation geopolitical-country data",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:1111/data/geopolitical-country.json",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1111",
-					"path": [
-						"data",
-						"geopolitical-country.json"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get accumulation hazard data",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:1111/data/hazard.json",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1111",
-					"path": [
-						"data",
-						"hazard.json"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "add import",
+			"name": "add to test data",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id\": \"1112\",\r\n  \"name\": \"import-2020-08-20-12-57-13\",\r\n  \"date\": \"2020-08-20\",\r\n  \"noOfLocations\": \"250K\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 300000\r\n  },\r\n  \"type\": \"IMPORT\",\r\n  \"status\": \"FINISHED\"\r\n}",
+					"raw": "{\r\n  \"id\": \"1111\",\r\n  \"name\": \"test-2020-08-20-12-57-13\",\r\n  \"date\": \"series #2\",\r\n  \"noOfLocations\": \"5M\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 1000000\r\n  },\r\n  \"type\": \"TEST\",\r\n  \"status\": \"FINISHED\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -99,7 +88,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:1111/data/import",
+					"raw": "http://localhost:1111/data/test",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -107,20 +96,20 @@
 					"port": "1111",
 					"path": [
 						"data",
-						"import"
+						"test"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "add geopolitical-country accumulation",
+			"name": "delete test data",
 			"request": {
-				"method": "PUT",
+				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id\": \"1111\",\r\n  \"name\": \"qa-eiq-a-e2e-country-2020-08-20-12-57-13\",\r\n  \"date\": \"2020-08-20\",\r\n  \"noOfLocations\": \"500K\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 500000\r\n  },\r\n  \"type\": \"ACCUMULATION\",\r\n  \"status\": \"FINISHED\"\r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -128,7 +117,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:1111/data/geopolitical-country",
+					"raw": "http://localhost:1111/data/test",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -136,36 +125,7 @@
 					"port": "1111",
 					"path": [
 						"data",
-						"geopolitical-country"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "add hazard accumulation",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"id\": \"1111\",\r\n  \"name\": \"qa-eiq-a-e2e-country-2020-08-20-12-57-13\",\r\n  \"date\": \"2020-08-20\",\r\n  \"noOfLocations\": \"500K\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 500000\r\n  },\r\n  \"type\": \"ACCUMULATION\",\r\n  \"status\": \"FINISHED\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:1111/data/hazard",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1111",
-					"path": [
-						"data",
-						"hazard"
+						"test"
 					]
 				}
 			},

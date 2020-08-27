@@ -2,9 +2,9 @@
 
 const path = require('path');
 const fetch = require('node-fetch');
-const { readFile, writeFile, readdir } = require('fs');
+const { readFile, writeFile, readdir, unlink } = require('fs');
 const { promisify } = require('util');
-const [ read, write, readDir ] = [ readFile, writeFile, readdir ].map(promisify);
+const [ read, write, readDir, deleteFile ] = [ readFile, writeFile, readdir, unlink ].map(promisify);
 
 const prettify = json => JSON.stringify(json, null, 2);
 
@@ -69,12 +69,24 @@ const saveWorkflowData = async (workflowData, dataType) => {
     await write(dataFilePath, prettify(currentData));
 };
 
+const getDataTypes = async (_, res) => {
+    const dataTypes = await getSortedFileNames('data');    
+    res.status(200).send(dataTypes);
+};
+
+const getSortedFileNames = async folderPath => {
+    const files = await readDir(folderPath);
+    return files
+        .map(fileName => fileName.replace(/\.json/, ''))
+        .sort().reverse();
+}
+
 const updateData = async (req, res) => {
-    const DATA_TYPES = await (await fetch('http://localhost:1111/data')).json();
+    const dataTypes = await getSortedFileNames('data');
     const dataType = req.params.dataType;
     
-    if (! DATA_TYPES.includes(dataType)){
-        res.status(406).send(`Wrong dataType! Only ${DATA_TYPES} are accepted`);
+    if (! dataTypes.includes(dataType)){
+        res.status(406).send(`Wrong dataType! Only ${dataTypes} are accepted`);
         return;
     }
 
@@ -95,12 +107,42 @@ const updateData = async (req, res) => {
     res.status(202).send(`${dataType} upload success`);
 };
 
-const getDataTypes = async (_, res) => {
-    const fileNames = await readDir('data');
-    const dataTypes = fileNames
-        .map(fileName => fileName.replace(/\.json/, ''))
-        .sort().reverse();
-    res.status(200).send(dataTypes);
+const createData = async (req, res) => {
+    const dataTypes = await getSortedFileNames('data');
+    const dataType = req.params.dataType;
+
+    if (dataTypes.includes(dataType)){
+        res.status(406).send(`Cannot create '${dataType}'. It already exists.`);
+        return;
+    }
+
+    if (req.headers['content-type'] !== 'application/json'){    
+        res.status(406).send('Only JSON is supported!');
+        return;
+    }
+
+    const data = req.body;
+
+    await write(`data/${dataType}.json`, prettify(data));
+    res.status(200).send(`Created ${dataType}.`);
 };
 
-module.exports = { updateData, getDataTypes };
+const deleteData = async (req, res) => {
+    const dataTypes = await getSortedFileNames('data')
+    const dataType = req.params.dataType;
+
+    if (! dataTypes.includes(dataType)){
+        res.status(404).send(`Cannot delete '${dataType}'.`);
+        return;
+    }
+
+    await deleteFile(`data/${dataType}.json`);
+    res.status(200).send(`Deleted ${dataType}.`);
+};
+
+module.exports = { 
+    getDataTypes, 
+    createData, 
+    updateData,
+    deleteData
+};
