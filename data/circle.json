@@ -9,5 +9,72 @@
         "stop": 6000000
       }
     },
-    "graphData": []
+    "graphData": [
+  {
+    "name": "_2020_08_25",
+    "values": [
+      {
+        "noOfLocations": 1,
+        "duration": 229214
+      },
+      {
+        "noOfLocations": 100,
+        "duration": 304085
+      },
+      {
+        "noOfLocations": 250,
+        "duration": 443902
+      },
+      {
+        "noOfLocations": 500,
+        "duration": 474004
+      },
+      {
+        "noOfLocations": 1000,
+        "duration": 489378
+      },
+      {
+        "noOfLocations": 4000,
+        "duration": 2213235
+      },
+      {
+        "noOfLocations": 5000,
+        "duration": 1824223
+      }
+    ]
+  },
+  {
+    "name": "_2020_08_29",
+    "values": [
+      {
+        "noOfLocations": 1,
+        "duration": 212183
+      },
+      {
+        "noOfLocations": 100,
+        "duration": 294818
+      },
+      {
+        "noOfLocations": 250,
+        "duration": 435427
+      },
+      {
+        "noOfLocations": 500,
+        "duration": 466746
+      },
+      {
+        "noOfLocations": 1000,
+        "duration": 500464
+      },
+      {
+        "noOfLocations": 4000,
+        "duration": 2151436
+      },
+      {
+        "noOfLocations": 5000,
+        "duration": 1830332
+      }
+    ]
+  }
+]
 }

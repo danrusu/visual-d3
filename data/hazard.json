@@ -10,14 +10,23 @@
     }
   },
   "graphData": [
-    {
-      "name": "_2020_08_24",
-      "values": [
-        {
-          "noOfLocations": 1,
-          "duration": 296938
-        }
-      ]
-    }
-  ]
+	  {
+		"name": "_2020_08_24",
+		"values": [
+		  {
+			"noOfLocations": 1,
+			"duration": 296938
+		  }
+		]
+	  },
+	  {
+		"name": "_2020_08_29",
+		"values": [
+		  {
+			"noOfLocations": 1,
+			"duration": 309438
+		  }
+		]
+	  }
+	]
 }
