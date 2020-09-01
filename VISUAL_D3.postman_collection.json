@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n  {\r\n    \"name\": \"_series #1\",\r\n    \"values\": [\r\n      {\r\n        \"noOfLocations\": 1,\r\n        \"duration\": 1000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 100,\r\n        \"duration\": 2000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 250,\r\n        \"duration\": 3000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 500,\r\n        \"duration\": 5000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 1000,\r\n        \"duration\": 3000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 4000,\r\n        \"duration\": 5000000\r\n      },\r\n      {\r\n        \"noOfLocations\": 5000,\r\n        \"duration\": 3000000\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"name\": \"_series #2\",\r\n    \"values\": [\r\n      {\r\n        \"noOfLocations\": 1,\r\n        \"duration\": 1500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 100,\r\n        \"duration\": 2500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 250,\r\n        \"duration\": 3500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 500,\r\n        \"duration\": 5500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 1000,\r\n        \"duration\": 3500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 4000,\r\n        \"duration\": 5500000\r\n      },\r\n      {\r\n        \"noOfLocations\": 5000,\r\n        \"duration\": 3500000\r\n      }\r\n    ]\r\n  }\r\n]",
+					"raw": "{\r\n  \"graphSettings\": {\r\n    \"xRange\": {\r\n      \"start\": 0,\r\n      \"stop\": 5000\r\n    },\r\n    \"yRange\": {\r\n      \"start\": 0,\r\n      \"stop\": 1000\r\n    }\r\n  },\r\n  \"graphData\": []\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -80,7 +80,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id\": \"1111\",\r\n  \"name\": \"test-2020-08-20-12-57-13\",\r\n  \"date\": \"series #2\",\r\n  \"noOfLocations\": \"5M\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 1000000\r\n  },\r\n  \"type\": \"TEST\",\r\n  \"status\": \"FINISHED\"\r\n}",
+					"raw": "{\r\n  \"id\": \"1111\",\r\n  \"name\": \"test-2020-08-20-12-57-13\",\r\n  \"date\": \"series #2\",\r\n  \"noOfLocations\": \"5M\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 2500\r\n  },\r\n  \"type\": \"TEST\",\r\n  \"status\": \"FINISHED\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

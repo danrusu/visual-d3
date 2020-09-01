@@ -2,14 +2,14 @@ const addXAxisLegend = (svg, legendText, width, height) => svg.append("text")
   .attr("class", "x label")
   .attr("text-anchor", "end")
   .attr("x", width)          
-  .attr("y", height - 10)
+  .attr("y", height + 40)
   .text(legendText)
   .style('fill', 'blue');
 
 const addYAxisLegend = (svg, legendText) => svg.append("text")
   .attr("class", "y label")
   .attr("text-anchor", "end")
-  .attr("y", 6)
+  .attr("y", +10)
   .attr("dy", ".75em")
   .attr("transform", "rotate(-90)")
   .text(legendText)
@@ -143,7 +143,9 @@ const getJson = async url => await (await fetch(url)).json();
 const getData = async dataType => getJson(`/data/${dataType}.json`);
 const getDataTypes = async () => getJson(`/data`);
 
-const displayDataGraph = async graphData => {   
+const displayDataGraph = async data => {   
+
+  const { graphSettings, graphData }  = data;
  
   // set the dimensions and margins of the graph
   const margin = {
@@ -158,8 +160,7 @@ const displayDataGraph = async graphData => {
     x: 'Portfolio size [no. of locations * 1000]',
     y: 'Duration [ms]'
   };
-  const xRange = { start: 0, stop: 5000 };
-  const yRange = { start: 0, stop: 6000000 };
+  const { xRange, yRange } = graphSettings;
 
 
   displayGraph('#dataGraph', graphData, { 
@@ -206,8 +207,9 @@ const setDataTypeMenu = async () => {
 };
 
 const displayDataTable = data => {  
-  const dataHeader = data[0] ? getDataHeader(data[0]) : [];
-  const dataRows = data.map(dataGroupToHtmlRow).join('\n');
+  const { graphData } = data;
+  const dataHeader = graphData[0] ? getDataHeader(graphData[0]) : [];
+  const dataRows = graphData.map(dataGroupToHtmlRow).join('\n');
   document.getElementById('dataTable').innerHTML = dataHeader + dataRows;
 };
 

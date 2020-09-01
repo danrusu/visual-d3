@@ -1,2 +1,13 @@
-[
-]
+{
+    "graphSettings": {
+      "xRange": {
+        "start": 0,
+        "stop": 5000
+      },
+      "yRange": {
+        "start": 0,
+        "stop": 6000000
+      }
+    },
+    "graphData": []
+}

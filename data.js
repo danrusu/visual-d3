@@ -43,7 +43,8 @@ const saveWorkflowData = async (workflowData, dataType) => {
     console.log(`formatedWorkflowData: ${prettify(formatedWorkflowData)}`);
     const { name, noOfLocations, duration } = formatedWorkflowData;
 
-    const currentData = JSON.parse(await read(dataFilePath));
+    const data = JSON.parse(await read(dataFilePath));
+    const currentData = data.graphData;
     const groupNameIndex = currentData.findIndex(group => group.name === name);
 
     if (groupNameIndex > -1){
@@ -66,7 +67,8 @@ const saveWorkflowData = async (workflowData, dataType) => {
     }
     console.log(prettify(currentData));
 
-    await write(dataFilePath, prettify(currentData));
+    data.graphData = currentData;
+    await write(dataFilePath, prettify(data));
 };
 
 const getDataTypes = async (_, res) => {
