@@ -80,7 +80,7 @@ const getSortedFileNames = async folderPath => {
     const files = await readDir(folderPath);
     return files
         .map(fileName => fileName.replace(/\.json/, ''))
-        .sort().reverse();
+        .sort();
 }
 
 const updateData = async (req, res) => {
