@@ -6,6 +6,13 @@ span[id$="TypeTxt"] {
     font-weight: bold;
 }
 
+.menu {
+  display: inline-block;
+  width: 250px;
+  margin: 0px;
+  padding: 0px;
+}
+
 .dataTypeSelected {
   color: blue;
 }

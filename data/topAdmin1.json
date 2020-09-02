@@ -9,5 +9,39 @@
       "stop": 1000
     }
   },
-  "graphData": []
+  "graphData": [
+    {
+      "name": "_2020_09_02",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 1126
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 94
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 87
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 83
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 92
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 101
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 88
+        }
+      ]
+    }
+  ]
 }

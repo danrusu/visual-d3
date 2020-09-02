@@ -6,7 +6,7 @@
     },
     "yRange": {
       "start": 0,
-      "stop": 1000
+      "stop": 2000
     }
   },
   "graphData": [
@@ -15,31 +15,31 @@
       "values": [
         {
           "noOfLocations": 1,
-          "duration": 113
-        },
-        {
-          "noOfLocations": 100,
           "duration": 87
         },
         {
+          "noOfLocations": 100,
+          "duration": 99
+        },
+        {
           "noOfLocations": 250,
-          "duration": 96
-        },
-        {
-          "noOfLocations": 500,
-          "duration": 84
-        },
-        {
-          "noOfLocations": 1000,
-          "duration": 91
-        },
-        {
-          "noOfLocations": 4000,
           "duration": 81
         },
         {
+          "noOfLocations": 500,
+          "duration": 90
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 79
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 121
+        },
+        {
           "noOfLocations": 5000,
-          "duration": 84
+          "duration": 88
         }
       ]
     }

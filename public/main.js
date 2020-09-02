@@ -184,8 +184,10 @@ const setDataTypeMenu = async () => {
   const dataTypes = await getDataTypes(); 
 
   const getDataTypeMenuHtml = dataType => `
-    <input type="radio" id="${dataType}" name="dataType">
-    <span id="${dataType}TypeTxt">${dataType}</span> 
+    <span class="menu">  
+      <input type="radio" id="${dataType}" name="dataType">
+      <span id="${dataType}TypeTxt">${dataType}</span> 
+    </span>
   `;
 
   const dataTypeHtml = dataTypes.map(getDataTypeMenuHtml).join('\n');
