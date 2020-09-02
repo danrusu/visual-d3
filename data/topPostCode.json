@@ -6,40 +6,73 @@
     },
     "yRange": {
       "start": 0,
-      "stop": 1000
+      "stop": 3000
     }
   },
   "graphData": [
+    {
+      "name": "_2020_09_01",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 229
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 233
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 223
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 235
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 229
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 229
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 223
+        }
+      ]
+    },
     {
       "name": "_2020_09_02",
       "values": [
         {
           "noOfLocations": 1,
-          "duration": 99
+          "duration": 215
         },
         {
           "noOfLocations": 100,
-          "duration": 95
+          "duration": 2181
         },
         {
           "noOfLocations": 250,
-          "duration": 91
+          "duration": 214
         },
         {
           "noOfLocations": 500,
-          "duration": 88
+          "duration": 217
         },
         {
           "noOfLocations": 1000,
-          "duration": 88
+          "duration": 219
         },
         {
           "noOfLocations": 4000,
-          "duration": 92
+          "duration": 226
         },
         {
           "noOfLocations": 5000,
-          "duration": 92
+          "duration": 222
         }
       ]
     }
