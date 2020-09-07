@@ -3,6 +3,7 @@ html {
 }
 
 span[id$="TypeTxt"] {
+    font-size: smaller;
     font-weight: bold;
 }
 
