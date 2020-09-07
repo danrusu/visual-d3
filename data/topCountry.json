@@ -48,15 +48,48 @@
       "values": [
         {
           "noOfLocations": 1,
-          "duration": 1239
+          "duration": 224
         },
         {
           "noOfLocations": 100,
-          "duration": 231
+          "duration": 223
         },
         {
           "noOfLocations": 250,
-          "duration": 225
+          "duration": 226
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 222
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 224
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 228
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 235
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_03",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 214
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 215
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 214
         },
         {
           "noOfLocations": 500,
@@ -64,15 +97,147 @@
         },
         {
           "noOfLocations": 1000,
-          "duration": 216
+          "duration": 212
         },
         {
           "noOfLocations": 4000,
-          "duration": 220
+          "duration": 239
         },
         {
           "noOfLocations": 5000,
-          "duration": 220
+          "duration": 211
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_04",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 215
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 228
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 223
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 224
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 227
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 219
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 219
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_05",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 218
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 234
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 223
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 217
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 1674
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 228
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 228
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_06",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 223
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 225
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 218
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 222
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 225
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 224
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 231
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_07",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 226
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 223
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 219
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 222
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 226
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 225
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 225
         }
       ]
     }

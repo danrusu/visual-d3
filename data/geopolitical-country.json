@@ -6,141 +6,302 @@
     },
     "yRange": {
       "start": 0,
-      "stop": 6000000
+      "stop": 3000000
     }
   },
   "graphData": [
-  {
-    "name": "_2020_18_11",
-    "values": [
-      {
-        "noOfLocations": 1,
-        "duration": 281398
-      },
-      {
-        "noOfLocations": 100,
-        "duration": 460418
-      },
-      {
-        "noOfLocations": 250,
-        "duration": 653194
-      },
-      {
-        "noOfLocations": 500,
-        "duration": 691563
-      },
-      {
-        "noOfLocations": 1000,
-        "duration": 774150
-      },
-      {
-        "noOfLocations": 4000,
-        "duration": 2502324
-      },
-      {
-        "noOfLocations": 5000,
-        "duration": 1990413
-      }
-    ]
-  },
-  {
-    "name": "_2020_18_15",
-    "values": [
-      {
-        "noOfLocations": 1,
-        "duration": 255404
-      },
-      {
-        "noOfLocations": 100,
-        "duration": 390403
-      },
-      {
-        "noOfLocations": 250,
-        "duration": 604463
-      },
-      {
-        "noOfLocations": 500,
-        "duration": 623594
-      },
-      {
-        "noOfLocations": 1000,
-        "duration": 737529
-      },
-      {
-        "noOfLocations": 4000,
-        "duration": 2336517
-      },
-      {
-        "noOfLocations": 5000,
-        "duration": 1838914
-      }
-    ]
-  },
-  {
-    "name": "_2020_08_23",
-    "values": [
-      {
-        "noOfLocations": 1,
-        "duration": 262373
-      },
-      {
-        "noOfLocations": 100,
-        "duration": 405028
-      },
-      {
-        "noOfLocations": 250,
-        "duration": 636467
-      },
-      {
-        "noOfLocations": 500,
-        "duration": 630519
-      },
-      {
-        "noOfLocations": 1000,
-        "duration": 687486
-      },
-      {
-        "noOfLocations": 4000,
-        "duration": 2170696
-      },
-      {
-        "noOfLocations": 5000,
-        "duration": 1749094
-      }
-    ]
-  },
-  {
-    "name": "_2020_08_29",
-    "values": [
-      {
-        "noOfLocations": 1,
-        "duration": 254221
-      },
-      {
-        "noOfLocations": 100,
-        "duration": 420985
-      },
-      {
-        "noOfLocations": 250,
-        "duration": 653494
-      },
-      {
-        "noOfLocations": 500,
-        "duration": 679454
-      },
-      {
-        "noOfLocations": 1000,
-        "duration": 818736
-      },
-      {
-        "noOfLocations": 4000,
-        "duration": 2300469
-      },
-      {
-        "noOfLocations": 5000,
-        "duration": 2033107
-      }
-    ]
-  }
-]
+    {
+      "name": "_2020_18_11",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 281398
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 460418
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 653194
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 691563
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 774150
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 2502324
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 1990413
+        }
+      ]
+    },
+    {
+      "name": "_2020_18_15",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 255404
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 390403
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 604463
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 623594
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 737529
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 2336517
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 1838914
+        }
+      ]
+    },
+    {
+      "name": "_2020_08_23",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 262373
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 405028
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 636467
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 630519
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 687486
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 2170696
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 1749094
+        }
+      ]
+    },
+    {
+      "name": "_2020_08_29",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 254221
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 420985
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 653494
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 679454
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 818736
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 2300469
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 2033107
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_03",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 257754
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 414379
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 665526
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 651383
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 768666
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 2237075
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 1888948
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_04",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 247030
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 443024
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 640598
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 680010
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 793891
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 2140844
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 2007166
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_05",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 225842
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 388802
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 613774
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 631824
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 732017
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 2071967
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 1902118
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_06",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 272249
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 387383
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 537851
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 532509
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 612286
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 1356171
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_07",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 367905
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 496622
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 743816
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 828630
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 881877
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 2108911
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 1931263
+        }
+      ]
+    }
+  ]
 }
