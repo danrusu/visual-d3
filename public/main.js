@@ -180,14 +180,12 @@ const filterByIterator = (array, finalSize) => {
     array.length / finalSize + 1 
     : Math.trunc(array.length / finalSize) + 1;
 
-  console.log(iteratorSize)
-
   const finalArray = [];
   for (let i=0; i < array.length; i+=iteratorSize){
-      finalArray.push(array[i])
+      finalArray.push(array[i]);
   } 
 
-  if(finalArray[finalArray.length - 1] != array[array.length - 1]){
+  if (finalArray[finalArray.length - 1] != array[array.length - 1]){
        finalArray.push(array[array.length - 1]);
   }
 
