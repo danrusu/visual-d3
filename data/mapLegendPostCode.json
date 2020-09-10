@@ -180,31 +180,31 @@
       "values": [
         {
           "noOfLocations": 1,
-          "duration": 221
+          "duration": 211
         },
         {
           "noOfLocations": 100,
-          "duration": 238
+          "duration": 236
         },
         {
           "noOfLocations": 250,
-          "duration": 219
+          "duration": 223
         },
         {
           "noOfLocations": 500,
-          "duration": 217
+          "duration": 219
         },
         {
           "noOfLocations": 1000,
-          "duration": 240
+          "duration": 229
         },
         {
           "noOfLocations": 4000,
-          "duration": 225
+          "duration": 218
         },
         {
           "noOfLocations": 5000,
-          "duration": 219
+          "duration": 222
         }
       ]
     }

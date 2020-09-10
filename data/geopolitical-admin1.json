@@ -16,6 +16,43 @@
         {
           "noOfLocations": 1,
           "duration": 349681
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 401035
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 807194
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_08",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 285305
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 433872
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 718390
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 834034
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 1735485
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 2055929
         }
       ]
     }

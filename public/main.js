@@ -1,3 +1,5 @@
+const DISPLAYED_SERIES_COUNT = 5;
+
 const addXAxisLegend = (svg, legendText, width, height) => svg.append("text")
   .attr("class", "x label")
   .attr("text-anchor", "end")
@@ -161,9 +163,8 @@ const displayDataGraph = async data => {
     y: 'Duration [ms]'
   };
   const { xRange, yRange } = graphSettings;
-
-
-  displayGraph('#dataGraph', graphData, { 
+  
+  displayGraph('#dataGraph', filterByIterator(graphData, DISPLAYED_SERIES_COUNT), { 
     margin, 
     width, 
     height,
@@ -172,6 +173,26 @@ const displayDataGraph = async data => {
     yRange,
   });
 };
+
+const filterByIterator = (array, finalSize) => {
+  
+  const iteratorSize = (array.length % finalSize) == 0 ?
+    array.length / finalSize + 1 
+    : Math.trunc(array.length / finalSize) + 1;
+
+  console.log(iteratorSize)
+
+  const finalArray = [];
+  for (let i=0; i < array.length; i+=iteratorSize){
+      finalArray.push(array[i])
+  } 
+
+  if(finalArray[finalArray.length - 1] != array[array.length - 1]){
+       finalArray.push(array[array.length - 1]);
+  }
+
+  return finalArray;
+}
 
 const dataTypeOnChange = () => [].slice.call(document.querySelectorAll('[name="dataType"]'))
     .forEach(dataTypeButton =>

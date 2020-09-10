@@ -15,7 +15,44 @@
       "values": [
         {
           "noOfLocations": 1,
-          "duration": 346823
+          "duration": 330845
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 549063
+        }
+      ]
+    },
+    {
+      "name": "_2020_09_08",
+      "values": [
+        {
+          "noOfLocations": 1,
+          "duration": 311648
+        },
+        {
+          "noOfLocations": 100,
+          "duration": 391434
+        },
+        {
+          "noOfLocations": 250,
+          "duration": 590960
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 650649
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 686214
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 1979492
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 1631962
         }
       ]
     }

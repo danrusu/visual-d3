@@ -213,7 +213,7 @@
       "values": [
         {
           "noOfLocations": 1,
-          "duration": 233
+          "duration": 235
         },
         {
           "noOfLocations": 100,
@@ -221,7 +221,7 @@
         },
         {
           "noOfLocations": 250,
-          "duration": 216
+          "duration": 228
         },
         {
           "noOfLocations": 500,
@@ -229,15 +229,15 @@
         },
         {
           "noOfLocations": 1000,
-          "duration": 233
+          "duration": 219
         },
         {
           "noOfLocations": 4000,
-          "duration": 220
+          "duration": 218
         },
         {
           "noOfLocations": 5000,
-          "duration": 214
+          "duration": 220
         }
       ]
     }

@@ -213,31 +213,31 @@
       "values": [
         {
           "noOfLocations": 1,
-          "duration": 239
-        },
-        {
-          "noOfLocations": 100,
-          "duration": 229
-        },
-        {
-          "noOfLocations": 250,
-          "duration": 215
-        },
-        {
-          "noOfLocations": 500,
-          "duration": 222
-        },
-        {
-          "noOfLocations": 1000,
-          "duration": 227
-        },
-        {
-          "noOfLocations": 4000,
           "duration": 225
         },
         {
-          "noOfLocations": 5000,
+          "noOfLocations": 100,
+          "duration": 222
+        },
+        {
+          "noOfLocations": 250,
           "duration": 226
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 227
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 224
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 215
+        },
+        {
+          "noOfLocations": 5000,
+          "duration": 218
         }
       ]
     }

@@ -184,27 +184,27 @@
         },
         {
           "noOfLocations": 100,
-          "duration": 236
-        },
-        {
-          "noOfLocations": 250,
-          "duration": 215
-        },
-        {
-          "noOfLocations": 500,
-          "duration": 219
-        },
-        {
-          "noOfLocations": 1000,
-          "duration": 223
-        },
-        {
-          "noOfLocations": 4000,
           "duration": 220
         },
         {
+          "noOfLocations": 250,
+          "duration": 238
+        },
+        {
+          "noOfLocations": 500,
+          "duration": 217
+        },
+        {
+          "noOfLocations": 1000,
+          "duration": 229
+        },
+        {
+          "noOfLocations": 4000,
+          "duration": 216
+        },
+        {
           "noOfLocations": 5000,
-          "duration": 214
+          "duration": 209
         }
       ]
     }
