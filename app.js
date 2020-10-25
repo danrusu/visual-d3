@@ -27,8 +27,8 @@ app.post('/data/:dataType', createData);
 app.put('/data/:dataType', updateData);
 app.delete('/data/:dataType', deleteData);
 
-const port = process.env.PORT || 1111;
 const notifyServerStart = () =>
     console.log(`visual-d3 server listening at http://localhost:${port}/`);
 
+const port = process.env.PORT || 1111;    
 app.listen(port, notifyServerStart);
