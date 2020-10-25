@@ -159,7 +159,7 @@ const displayDataGraph = async data => {
   const width = 1000;
   const height = 500;
   const legend = {
-    x: 'Portfolio size [no. of locations * 1000]',
+    x: 'Locations count',
     y: 'Duration [ms]'
   };
   const { xRange, yRange } = graphSettings;
