@@ -110,11 +110,11 @@ const displayGraph = (containerSelector, data, {
           value: d.values[d.values.length - 1]
         })
             )	// keep only the last value of each noOfLocations series
-            .attr("transform", d => `translate(${x(d.value.noOfLocations)}, ${y(d.value.duration)})`) // Put the text at the position of the last point
-            .attr("x", 12) // shift the text a bit more right
-            .text(d => d.name)
-            .style("fill", d => myColor(d.name))
-            .style("font-size", 10);
+            //.attr("transform", d => `translate(${x(d.value.noOfLocations)}, ${y(d.value.duration)})`) // Put the text at the position of the last point
+            //.attr("x", 12) // shift the text a bit more right
+            //.text(d => d.name)
+            //.style("fill", d => myColor(d.name))
+            //.style("font-size", 10);
 
       // Add a legend (interactive)
       svg
