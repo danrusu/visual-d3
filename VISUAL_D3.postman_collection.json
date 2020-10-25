@@ -6,13 +6,78 @@
 	},
 	"item": [
 		{
+			"name": "get data types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/data",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"data"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get data types",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/data",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "8"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8-zrZp/tlEqVb+FhAlFB40AUCfW9E\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 Oct 2020 13:38:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"demo\"\n]"
+				}
+			]
+		},
+		{
 			"name": "create test data",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"graphSettings\": {\r\n    \"xRange\": {\r\n      \"start\": 0,\r\n      \"stop\": 5000\r\n    },\r\n    \"yRange\": {\r\n      \"start\": 0,\r\n      \"stop\": 1000\r\n    }\r\n  },\r\n  \"graphData\": []\r\n}",
+					"raw": "{\r\n  \"graphSettings\": {\r\n    \"xRange\": {\r\n      \"start\": 0,\r\n      \"stop\": 1000\r\n    },\r\n    \"yRange\": {\r\n      \"start\": 0,\r\n      \"stop\": 2000\r\n    }\r\n  },\r\n  \"graphData\": []\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,38 +85,75 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:1111/data/test",
-					"protocol": "http",
+					"raw": "{{URL}}/data/aTest",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "1111",
 					"path": [
 						"data",
-						"test"
+						"aTest"
 					]
 				}
 			},
-			"response": []
-		},
-		{
-			"name": "get data types",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:1111/data",
-					"protocol": "http",
-					"host": [
-						"localhost"
+			"response": [
+				{
+					"name": "create test data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"graphSettings\": {\r\n    \"xRange\": {\r\n      \"start\": 0,\r\n      \"stop\": 1000\r\n    },\r\n    \"yRange\": {\r\n      \"start\": 0,\r\n      \"stop\": 2000\r\n    }\r\n  },\r\n  \"graphData\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/data/aTest",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"data",
+								"aTest"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-MVi3pNyxjkuDJiba9Hm7eD1RQMY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 Oct 2020 13:22:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
 					],
-					"port": "1111",
-					"path": [
-						"data"
-					]
+					"cookie": [],
+					"body": "Created aTest."
 				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "get test data",
@@ -59,19 +161,78 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:1111/data/test.json",
-					"protocol": "http",
+					"raw": "{{URL}}/data/aTest.json",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "1111",
 					"path": [
 						"data",
-						"test.json"
+						"aTest.json"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "get test data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/data/aTest.json",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"data",
+								"aTest.json"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0"
+						},
+						{
+							"key": "Last-Modified",
+							"value": "Sun, 25 Oct 2020 13:39:09 GMT"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a6-1755ffbf4ee\""
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "166"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 Oct 2020 13:39:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"graphSettings\": {\n        \"xRange\": {\n            \"start\": 0,\n            \"stop\": 1000\n        },\n        \"yRange\": {\n            \"start\": 0,\n            \"stop\": 2000\n        }\n    },\n    \"graphData\": []\n}"
+				}
+			]
 		},
 		{
 			"name": "add to test data",
@@ -80,7 +241,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"id\": \"1111\",\r\n  \"name\": \"test-2020-08-20-12-57-13\",\r\n  \"date\": \"series #2\",\r\n  \"noOfLocations\": \"5M\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 2500\r\n  },\r\n  \"type\": \"TEST\",\r\n  \"status\": \"FINISHED\"\r\n}",
+					"raw": "{\r\n  \"name\": \"test-2020-11-11-12-57-13\",\r\n  \"date\": \"2020_11_11\",\r\n  \"noOfLocations\": \"100K\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 200000\r\n  }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -88,19 +249,75 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:1111/data/test",
-					"protocol": "http",
+					"raw": "{{URL}}/data/aTest",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "1111",
 					"path": [
 						"data",
-						"test"
+						"aTest"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "add to test data",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"test-2020-11-11-12-57-13\",\r\n  \"date\": \"2020_11_11\",\r\n  \"noOfLocations\": \"100K\",\r\n  \"duration\": {\r\n    \"str\": \"0:4:38.747 h:m:s.ms\",\r\n    \"ms\": 200000\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/data/aTest",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"data",
+								"aTest"
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-oWXZFWtJYnua1xhwZW8pEoixo+U\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 Oct 2020 13:40:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "aTest upload success"
+				}
+			]
 		},
 		{
 			"name": "delete test data",
@@ -117,19 +334,75 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:1111/data/test",
-					"protocol": "http",
+					"raw": "{{URL}}/data/aTest",
 					"host": [
-						"localhost"
+						"{{URL}}"
 					],
-					"port": "1111",
 					"path": [
 						"data",
-						"test"
+						"aTest"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "delete test data",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/data/aTest",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"data",
+								"aTest"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-YMFk96wt9HpaQurcww++7i1geNU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 Oct 2020 13:40:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Deleted aTest."
+				}
+			]
 		}
 	],
 	"protocolProfileBehavior": {}
