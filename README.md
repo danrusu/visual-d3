@@ -1,4 +1,4 @@
-# Node & Express & D3.js Visualization Solution
+## Node & Express & D3.js Visualization Solution
 
 ### Run visual-d3 server:
 ```
