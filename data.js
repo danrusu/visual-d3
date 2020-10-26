@@ -8,66 +8,43 @@ const [ read, write, readDir, deleteFile ] = [ readFile, writeFile, readdir, unl
 
 const prettify = json => JSON.stringify(json, null, 2);
 
-const NO_OF_LOCATIONS = {
-    '1K': 1,
-    '100K': 100,
-    '250K': 250,
-    '500K': 500,
-    '1M': 1000,
-    '4M': 4000,
-    '5M': 5000,
-};
+const saveData = async (dataToSave, dataType) => {
+    const { name, x, y } = dataToSave;
+    const data = await getData(dataType);
+    const xExpectedValues = data.graphSettings.xExpectedValues;
 
-const formatWorkflowData = workflowData => {
-    const {date, noOfLocations, duration} = workflowData;
-    return {
-        name: `_${date.replace(/-/g, '_')}`,
-        noOfLocations: NO_OF_LOCATIONS[noOfLocations],
-        duration: duration.ms
-    };
-}
+    if (! xExpectedValues.includes(x)){
+        const errorMessage = `Wrong x value: ${x}. Not saved!`;
+        console.log(errorMessage);
+        return `${errorMessage}\nValid x values: ${prettify(xExpectedValues)}`
+    }
 
-const saveWorkflowData = async (workflowData, dataType) => {
-
-   // validate workflowData.type vs. dataType
-
-   if (! Object.keys(NO_OF_LOCATIONS).includes(workflowData.noOfLocations)){
-       const errorMessage = `Wrong noOfLocations: ${workflowData.noOfLocations}. Not saved!`;       
-       console.log(errorMessage);
-       return `${errorMessage}\nValid noOfLocations: ${prettify(NO_OF_LOCATIONS)}`
-   }
-
-   const dataFilePath = path.join(`${__dirname}/data/${dataType}.json`);
-
-    const formatedWorkflowData = formatWorkflowData(workflowData);
-    console.log(`formatedWorkflowData: ${prettify(formatedWorkflowData)}`);
-    const { name, noOfLocations, duration } = formatedWorkflowData;
-
-    const data = JSON.parse(await read(dataFilePath));
+    console.log(`dataToSave: ${prettify(dataToSave)}`);
+    
     const currentData = data.graphData;
-    const groupNameIndex = currentData.findIndex(group => group.name === name);
+    const groupNameIndex = currentData.findIndex(series => series.name === name);
 
     if (groupNameIndex > -1){
         const values = currentData[groupNameIndex].values;
-        const noOfLocationsIndex = values.findIndex(value => value.noOfLocations === noOfLocations);
+        const xIndex = values.findIndex(value => value.x === x);
         
-        if (noOfLocationsIndex > -1){
-            values[noOfLocationsIndex].duration = duration;
+        if (xIndex > -1){
+            values[xIndex].y = y;
         }
         else {
-            values.push({ noOfLocations, duration });            
+            values.push({ x, y });            
         }
-        values.sort((v1, v2) => v1.noOfLocations < v2.noOfLocations ? -1 : 1);
+        values.sort((v1, v2) => v1.x - v2.x > 0 ? -1 : 1);
     }
     else{
         currentData.push({ 
             name,
-            values: [ { noOfLocations, duration } ]
+            values: [ { x, y } ]
         });        
-    }
-    console.log(prettify(currentData));
+    }    
 
     data.graphData = currentData;
+    const dataFilePath = path.join(`${__dirname}/data/${dataType}.json`);
     await write(dataFilePath, prettify(data));
 };
 
@@ -81,9 +58,9 @@ const getSortedFileNames = async folderPath => {
     return files
         .map(fileName => fileName.replace(/\.json/, ''))
         .sort();
-}
+};
 
-const updateData = async (req, res) => {
+const getXExpectedValues = async (req, res) => {
     const dataTypes = await getSortedFileNames('data');
     const dataType = req.params.dataType;
     
@@ -92,15 +69,30 @@ const updateData = async (req, res) => {
         return;
     }
 
+    const data = await getData(dataType);    
+    res.status(200).send(data.graphSettings.xExpectedValues);
+};
+
+const getData = async dataType => JSON.parse(await read(`data/${dataType}.json`));
+
+const updateData = async (req, res) => {
+    const dataTypes = await getSortedFileNames('data');
+    const dataType = req.params.dataType;
+    
+    if (! dataTypes.includes(dataType)){
+        res.status(406).send(`Wrong dataType! Only ${dataTypes} are accepted`);
+        return; 
+    }
+
     if (req.headers['content-type'] !== 'application/json'){    
         res.status(406).send('Only JSON is supported!');
         return;
     }
     
-    const workflowData = req.body;
-    console.log(`Received ${dataType} workflow data: ${prettify(workflowData)}`);
+    const dataToSave = req.body;
+    console.log(`Received data: ${prettify(dataToSave)}`);
 
-    const errorMessage = await saveWorkflowData(workflowData, dataType);
+    const errorMessage = await saveData(dataToSave, dataType);
     if (errorMessage){
         res.status(406).send(errorMessage);
         return;
@@ -144,6 +136,7 @@ const deleteData = async (req, res) => {
 
 module.exports = { 
     getDataTypes, 
+    getXExpectedValues,
     createData, 
     updateData,
     deleteData
