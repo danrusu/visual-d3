@@ -32,6 +32,63 @@
 			},
 			"response": [
 				{
+					"name": "try to create existent test data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"graphSettings\": {\r\n    \"width\": 1000,\r\n    \"height\": 500,\r\n    \"xRange\": {\r\n      \"start\": 0,\r\n      \"stop\": 100\r\n    },\r\n    \"yRange\": {\r\n      \"start\": 0,\r\n      \"stop\": 1000\r\n    },\r\n    \"legend\": {\r\n      \"x\": \"Locations\",\r\n      \"y\": \"Duration [ms]\"\r\n    },\r\n    \"xExpectedValues\": [     \r\n      10, \r\n      20, \r\n      30,\r\n      40,\r\n      50,\r\n      60,\r\n      70,\r\n      80,\r\n      90,\r\n      100      \r\n    ]\r\n  },\r\n  \"graphData\": [\r\n    {\r\n      \"name\": \"_2020_09_09\",\r\n      \"values\": [\r\n        {\r\n          \"x\": 10,\r\n          \"y\": 150\r\n        },\r\n        {\r\n          \"x\": 20,\r\n          \"y\": 230\r\n        },\r\n        {\r\n          \"x\": 30,\r\n          \"y\": 300\r\n        },\r\n        {\r\n          \"x\": 40,\r\n          \"y\": 420\r\n        },\r\n        {\r\n          \"x\": 50,\r\n          \"y\": 580\r\n        },\r\n        {\r\n          \"x\": 60,\r\n          \"y\": 610\r\n        },\r\n        {\r\n          \"x\": 70,\r\n          \"y\": 755\r\n        },\r\n        {\r\n          \"x\": 80,\r\n          \"y\": 888\r\n        },\r\n        {\r\n          \"x\": 90,\r\n          \"y\": 910\r\n        },\r\n        {\r\n          \"x\": 100,\r\n          \"y\": 950\r\n        }        \r\n      ]\r\n    },\r\n    {\r\n      \"name\": \"_2020_09_10\",\r\n      \"values\": [\r\n        {\r\n          \"x\": 10,\r\n          \"y\": 170\r\n        },\r\n        {\r\n          \"x\": 20,\r\n          \"y\": 250\r\n        },\r\n        {\r\n          \"x\": 30,\r\n          \"y\": 330\r\n        },\r\n        {\r\n          \"x\": 40,\r\n          \"y\": 440\r\n        },\r\n        {\r\n          \"x\": 50,\r\n          \"y\": 590\r\n        },\r\n        {\r\n          \"x\": 60,\r\n          \"y\": 630\r\n        },\r\n        {\r\n          \"x\": 70,\r\n          \"y\": 775\r\n        },\r\n        {\r\n          \"x\": 80,\r\n          \"y\": 898\r\n        },\r\n        {\r\n          \"x\": 90,\r\n          \"y\": 930\r\n        },\r\n        {\r\n          \"x\": 100,\r\n          \"y\": 980\r\n        }        \r\n      ]\r\n    },\r\n    {\r\n      \"name\": \"_2020_09_11\",\r\n      \"values\": [\r\n        {\r\n          \"x\": 10,\r\n          \"y\": 50\r\n        },\r\n        {\r\n          \"x\": 20,\r\n          \"y\": 130\r\n        },\r\n        {\r\n          \"x\": 30,\r\n          \"y\": 200\r\n        },\r\n        {\r\n          \"x\": 40,\r\n          \"y\": 320\r\n        },\r\n        {\r\n          \"x\": 50,\r\n          \"y\": 480\r\n        },\r\n        {\r\n          \"x\": 60,\r\n          \"y\": 510\r\n        },\r\n        {\r\n          \"x\": 70,\r\n          \"y\": 655\r\n        },\r\n        {\r\n          \"x\": 80,\r\n          \"y\": 788\r\n        },\r\n        {\r\n          \"x\": 90,\r\n          \"y\": 850\r\n        }       \r\n      ]\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/data/test",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"data",
+								"test"
+							]
+						}
+					},
+					"status": "Not Acceptable",
+					"code": 406,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-/Sy/BrOv0r96nkEAY7rKTur7JLA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Oct 2020 17:50:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Cannot create 'test'. It already exists."
+				},
+				{
 					"name": "create test data",
 					"originalRequest": {
 						"method": "POST",
@@ -221,6 +278,55 @@
 					],
 					"cookie": [],
 					"body": "[\n    10,\n    20,\n    30,\n    40,\n    50,\n    60,\n    70,\n    80,\n    90,\n    100\n]"
+				},
+				{
+					"name": "get test data xExpectedValues -  - wrong dataType",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/data/test_wrong/xExpectedValues",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"data",
+								"test_wrong",
+								"xExpectedValues"
+							]
+						}
+					},
+					"status": "Not Acceptable",
+					"code": 406,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-nKtm+F4laAPAaXxSkk3oe27QQhk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Oct 2020 17:51:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Wrong dataType! Only demo,test are accepted"
 				}
 			]
 		},
@@ -241,6 +347,58 @@
 				}
 			},
 			"response": [
+				{
+					"name": "get test data - wrong dataType",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/data/test1.json",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"data",
+								"test1.json"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'none'"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "154"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Oct 2020 17:51:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Cannot GET /data/test1.json</pre>\n    </body>\n</html>"
+				},
 				{
 					"name": "get test data",
 					"originalRequest": {
@@ -385,6 +543,120 @@
 					],
 					"cookie": [],
 					"body": "test upload success"
+				},
+				{
+					"name": "add new test data-  - wrong x value (not in xExpectedValues)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"_2020_09_11\",\r\n  \"x\": 200,\r\n  \"y\": 900\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/data/test",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"data",
+								"test"
+							]
+						}
+					},
+					"status": "Not Acceptable",
+					"code": 406,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "110"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6e-FOnKMHyNHWCt7k7STb5wdvB/E1U\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Oct 2020 17:54:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Wrong x value: 200. Not saved!\nValid x values: [\n  10,\n  20,\n  30,\n  40,\n  50,\n  60,\n  70,\n  80,\n  90,\n  100\n]"
+				},
+				{
+					"name": "add new test data -  - wrong dataType",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"_2020_09_11\",\r\n  \"x\": 100,\r\n  \"y\": 900\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/data/test1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"data",
+								"test1"
+							]
+						}
+					},
+					"status": "Not Acceptable",
+					"code": 406,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-nKtm+F4laAPAaXxSkk3oe27QQhk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Oct 2020 17:53:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Wrong dataType! Only demo,test are accepted"
 				}
 			]
 		},
@@ -555,6 +827,63 @@
 					],
 					"cookie": [],
 					"body": "Deleted test."
+				},
+				{
+					"name": "delete test data - wrong dataType",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/data/test1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"data",
+								"test1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16-pp/s21ITELy2wHab5eA+JdI7Mfc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Oct 2020 17:54:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Cannot delete 'test1'."
 				}
 			]
 		}
