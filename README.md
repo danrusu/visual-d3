@@ -6,12 +6,8 @@ npm install
 npm start
 ```
 
-***
-
 #### 2. [Frontend on localhost](http://localhost:1111)
 ![front_end_demo_snapshot](./public/front_end_demo_snapshot.jpg)
-
-***
 
 #### 3. API
 
