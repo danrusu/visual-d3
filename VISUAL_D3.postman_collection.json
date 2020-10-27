@@ -888,5 +888,37 @@
 			]
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "910ba513-bf89-42ae-a2bb-aba549156b27",
+				"type": "text/javascript",
+				"exec": [
+					"var ENVS = [",
+					"    'VISUAL_D3'",
+					"];",
+					"",
+					"if (!ENVS.includes(pm.environment.name)) {",
+					"    postman.setNextRequest(null);",
+					"    throw new Error(`Wrong environment: ${pm.environment.name}. Valid environments: ${ENVS}`);",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "966bf1db-cac8-4072-a608-eb971483dee9",
+				"type": "text/javascript",
+				"exec": [
+					"const successResponseCodes = [ 200, 202 ];",
+					"",
+					"pm.test('Success response code', () => ",
+					"    pm.expect(pm.response.code).to.be.oneOf(successResponseCodes));"
+				]
+			}
+		}
+	],
 	"protocolProfileBehavior": {}
 }
