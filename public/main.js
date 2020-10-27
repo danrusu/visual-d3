@@ -215,7 +215,8 @@ const setDataTypeMenu = async () => {
   dataTypeButtons.forEach(setDataTypeOnChange);
   dataTypeButtons.forEach(setDataTypeOnClick);
 
-  document.getElementById(dataTypes[0]).click();
+  const dataTypeToDisplay = localStorage.dataType !== "undefined" ? localStorage.dataType : dataTypes[0];
+  document.getElementById(dataTypeToDisplay).click();
 };
 
 const displayDataTable = data => {
@@ -267,6 +268,7 @@ const msToTimeStr = durationInMiliseconds => {
 }
 
 const setPage = async dataType => {
+  localStorage.dataType = dataType;
   const data = await getData(dataType);
   const applyAction = data => action => action(data);
 

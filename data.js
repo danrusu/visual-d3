@@ -34,7 +34,7 @@ const saveData = async (dataToSave, dataType) => {
         else {
             values.push({ x, y });            
         }
-        values.sort((v1, v2) => v1.x - v2.x > 0 ? -1 : 1);
+        values.sort((v1, v2) => v1.x - v2.x > 0 ? 1 : -1);
     }
     else{
         currentData.push({ 
