@@ -214,8 +214,8 @@ const setDataTypeMenu = async () => {
 
   dataTypeButtons.forEach(setDataTypeOnChange);
   dataTypeButtons.forEach(setDataTypeOnClick);
-
-  const dataTypeToDisplay = localStorage.dataType !== "undefined" ? localStorage.dataType : dataTypes[0];
+  
+  const dataTypeToDisplay = dataTypes.includes(localStorage.dataType) ? localStorage.dataType : dataTypes[0];
   document.getElementById(dataTypeToDisplay).click();
 };
 
@@ -232,7 +232,7 @@ const getDataHeader = data => {
     .map(value => `<span class="value">${value.x}</span>`)
     .join('');
   return `<div class="header"><span>${tableHeaderText}</span>${header}</div>`
-    + `<div class="header"><span>Series</span class="values"><span class="sevenColumns">Duration [h:m:s.ms]<span></div>`
+    + `<div class="header"><span>Series</span class="values"><span id="multipleColumnsHeader">Duration [h:m:s.ms]<span></div>`
 };
 
 const dataGroupToHtmlRow = dataGroup => {
@@ -267,6 +267,11 @@ const msToTimeStr = durationInMiliseconds => {
   return `${hours}:${minutes}:${seconds}.${milliseconds}`;
 }
 
+const setDataTableHeaderWidth = graphData => {
+  const maxValuesCount = Math.max( ...graphData.map(data => data.values.length));
+  document.getElementById("multipleColumnsHeader").style.width = `${120 * maxValuesCount - 20}px`;
+}
+
 const setPage = async dataType => {
   localStorage.dataType = dataType;
   const data = await getData(dataType);
@@ -274,4 +279,5 @@ const setPage = async dataType => {
 
   const dataActions = [displayDataGraph, displayDataTable];
   dataActions.forEach(applyAction(data));
+  setDataTableHeaderWidth(data.graphData);
 }
