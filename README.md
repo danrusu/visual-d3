@@ -3,7 +3,7 @@
 #### 1. Run visual-d3 server:
 ```
 npm install
-npm start
+docker run -p 1111:1111 -v $(pwd):/var/www -w "/var/www" node npm start
 ```
 
 #### 2. [Frontend on localhost](http://localhost:1111)
