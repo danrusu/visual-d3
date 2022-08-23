@@ -3,7 +3,7 @@ const { findAPortNotInUse } = require('portscanner');
 const LOCALHOST_IP = '127.0.0.1';
 
 const range = (from, to) =>
-  Array.from({ length: to - from }, (_element, index) => index + from);
+  Array.from({ length: to - from + 1 }, (_element, index) => index + from);
 
 const findFreePort = async portsArray => {
   const freePort = await new Promise(resolve => {
